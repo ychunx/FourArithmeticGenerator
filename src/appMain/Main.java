@@ -18,19 +18,29 @@ public class Main {
                     String[] exercise = GenerateUtil.toExercise(exerciseAns);
                     String[] answer = GenerateUtil.toAnswer(exerciseAns);
 
+                    FileIOUtil.outPut(exerciseAns,3);
                     FileIOUtil.outPut(exercise,0);
                     FileIOUtil.outPut(answer,1);
                 }else {
                     System.out.println("您输入的参数不合法！！！");
                     System.exit(0);
                 }
-            }else if(args[4].equals("-e") && args[6].equals("-a")) {
+            }else if(args[0].equals("-e") && args[2].equals("-a")) {
                 String exercisepath = args[1];
                 String answerpath =args[3];
                 String[] SExercise = FileIOUtil.in(exercisepath);
-                String[] SAnswer = FileIOUtil.in(answerpath);
+                String[] SAnswers = FileIOUtil.in(answerpath);
 
-                JudgeUtil.judge(SExercise,SAnswer);
+                /*
+                System.out.println(exercisepath);
+
+                for(int i=0;i<SExercise.length;i++){
+                    System.out.println(SExercise[i]);
+                    System.out.println(SAnswers[i]);
+                }
+                */
+
+                JudgeUtil.judge(SExercise,SAnswers);
             }else {
                 System.out.println("您输入的参数不合法！！！");
                 System.exit(0);

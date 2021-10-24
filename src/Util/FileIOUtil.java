@@ -15,12 +15,16 @@ public class FileIOUtil {
         }else if(i == 2){
             String path = "Grade.txt";
             out(s,path);
+        } else if(i == 3){
+            String path = "exerciseAns.txt";
+            out(s,path);
         }
+
     }
 
     public static String[] in(String path) {
         String strALine;
-        String a[] = new String[1024];
+        String a[] = new String[10];
         try {
             int i = 0;
             FileReader fr = new FileReader(path);
@@ -42,7 +46,7 @@ public class FileIOUtil {
         try {
             FileWriter fw = new FileWriter(file, true);
             for(int i=1;i<s.length+1;i++){
-                fw.write(i + "." + s[i-1]+"\n");
+                fw.write(i + "、" + s[i-1]+"\n");
             }
             fw.close();
         } catch (IOException e) {

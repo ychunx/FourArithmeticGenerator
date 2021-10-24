@@ -9,7 +9,7 @@ public class JudgeUtil {
         int wrongNum=0;
         for(int i=0;i<e.length;i++){
             if(e[i].equals(a[i])) {
-                rCount[i]=i+1;
+                rCount[rightNum]=i+1;
                 rightNum++;
             }
             else {
@@ -28,6 +28,6 @@ public class JudgeUtil {
         String[] s = new String[2];
         s[0] = "Correct:" + rightNum + "(" + r + ")";
         s[1] = "Wrong:" + wrongNum + "(" + w + ")";
-        FileIOUtil.outPut(s,3);
+        FileIOUtil.outPut(s,2);
     }
 }
