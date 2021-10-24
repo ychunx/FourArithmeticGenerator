@@ -130,7 +130,7 @@ public class GenerateUtil {
         return r;
     }
 
-    //约分
+    //假分数转换真分数
     public static String divide(int a, int b){
         if(a>=b){
             int c,d;
@@ -142,7 +142,7 @@ public class GenerateUtil {
         else return a+"/"+b;
     }
 
-    //假分数转换真分数
+    //约分
     public static String reductionOfAFraction(int a, int b) {
         int maxfactor = 1;
         for (int i = a; i >= 1; i--) {
