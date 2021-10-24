@@ -2,8 +2,10 @@ package Util;
 
 import java.util.Random;
 
+//题目生成函数
 public class GenerateUtil {
 
+    //生成题目和答案字符串数组
     public static String[] createExercise(int range, int num) {
 
         Random random = new Random();
@@ -109,6 +111,8 @@ public class GenerateUtil {
         }
         return exerciseAns;
     }
+
+    //生成题目字符串数组
     public static String[] toExercise(String[] s) {
         String[] r = new String[s.length];
         for (int i=0;i<s.length;i++){
@@ -116,6 +120,8 @@ public class GenerateUtil {
         }
         return r;
     }
+
+    //生成答案字符串数组
     public static String[] toAnswer(String[] s) {
         String[] r = new String[s.length];
         for (int i=0;i<s.length;i++){
@@ -124,6 +130,7 @@ public class GenerateUtil {
         return r;
     }
 
+    //约分
     public static String divide(int a, int b){
         if(a>=b){
             int c,d;
@@ -135,6 +142,7 @@ public class GenerateUtil {
         else return a+"/"+b;
     }
 
+    //假分数转换真分数
     public static String reductionOfAFraction(int a, int b) {
         int maxfactor = 1;
         for (int i = a; i >= 1; i--) {

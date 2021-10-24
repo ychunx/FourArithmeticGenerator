@@ -10,6 +10,8 @@ public class Main {
     public static void main(String[] args) {
 
         if(args.length == 4){
+
+            //如果为 -n 和 -r 参数则进入题目生成部分
             if(args[0].equals("-n") && args[2].equals("-r")) {
                 int num=Integer.parseInt(args[1]);
                 int range=Integer.parseInt(args[3]);
@@ -26,7 +28,8 @@ public class Main {
                     System.exit(0);
                 }
             }else if(args[0].equals("-e") && args[2].equals("-a")) {
-                String exercisepath = args[1];
+                //如果为 -e 和 -a 参数则进入批改部分
+                String exercisepath = args[1];  //传入路径
                 String answerpath =args[3];
                 String[] SExercise = FileIOUtil.in(exercisepath);
                 String[] SAnswers = FileIOUtil.in(answerpath);
@@ -40,6 +43,7 @@ public class Main {
                 }
                 */
 
+                //批改
                 JudgeUtil.judge(SExercise,SAnswers);
             }else {
                 System.out.println("您输入的参数不合法。");
