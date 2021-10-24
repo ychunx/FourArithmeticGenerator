@@ -22,7 +22,7 @@ public class Main {
                     FileIOUtil.outPut(exercise,0);
                     FileIOUtil.outPut(answer,1);
                 }else {
-                    System.out.println("您输入的参数不合法！！！");
+                    System.out.println("您输入的参数不合法。");
                     System.exit(0);
                 }
             }else if(args[0].equals("-e") && args[2].equals("-a")) {
@@ -42,7 +42,7 @@ public class Main {
 
                 JudgeUtil.judge(SExercise,SAnswers);
             }else {
-                System.out.println("您输入的参数不合法！！！");
+                System.out.println("您输入的参数不合法。");
                 System.exit(0);
             }
         }else {
