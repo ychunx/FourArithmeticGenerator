@@ -1,7 +1,7 @@
 package Util;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 public class FileIOUtil {
 
@@ -24,21 +24,24 @@ public class FileIOUtil {
 
     public static String[] in(String path) {
         String strALine;
-        String a[] = new String[10];
+        ArrayList a =new ArrayList();
         try {
             int i = 0;
             FileReader fr = new FileReader(path);
             BufferedReader br = new BufferedReader(fr);
             while ((strALine = br.readLine()) != null) {
-                a[i] = strALine;
-                i++;
+                a.add(strALine);
             }
             br.close();
             fr.close();
         } catch (IOException e) {
             System.out.println("指定文件不存在。");
         }
-        return a;
+        String[] r = new String[a.size()];
+        for (int i=0;i<a.size();i++){
+            r[i] = a.get(i).toString();
+        }
+        return r;
     }
 
     public static void out(String[] s,String path){
