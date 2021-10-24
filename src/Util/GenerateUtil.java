@@ -20,19 +20,19 @@ public class GenerateUtil {
             if (b != 0 && d != 0) {
                 if (operator == 0) {
                     int numerator = a * d + b * c;
-                    int denominator = b * c;
+                    int denominator = b * d;
                     subject[i] = divide(a, b) + '+' + divide(c, d) + '=';
                     answer[i] = reductionOfAFraction(numerator, denominator);
                 }
                 if (operator == 1) {
                     if (a * d - b * c >= 0) {
                         int numerator = a * d - b * c;
-                        int denominator = b * c;
+                        int denominator = b * d;
                         subject[i] = divide(a, b) + '-' + divide(c, d) + '=';
                         answer[i] = reductionOfAFraction(numerator, denominator);
                     } else {
                         int numerator = b * c - a * d;
-                        int denominator = b * c;
+                        int denominator = b * d;
                         subject[i] = divide(c, d) + '-' + divide(a, b) + '=';
                         answer[i] = reductionOfAFraction(numerator, denominator);
 
