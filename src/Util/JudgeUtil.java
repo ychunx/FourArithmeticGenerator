@@ -11,18 +11,18 @@ public class JudgeUtil {
         ArrayList wCount =new ArrayList();
         //int rCount[]=new int[e.length];
         //int wCount[]=new int[a.length];
-        int rightNum=0; //记录正确数目
-        int wrongNum=0; //记录错误数目
+        //int rightNum=0; //记录正确数目
+        //int wrongNum=0; //记录错误数目
 
         //根据学生提交的作业（包含题目和答案）判断是否与原题目和答案相等做出简单判断
         for(int i=0;i<e.length;i++){
             if(e[i].equals(a[i])) {
                 rCount.add(i+1);    //记录正确题号
-                rightNum++;
+                //rightNum++;
             }
             else {
                 wCount.add(i+1);    //记录错误题号
-                wrongNum++;
+                //wrongNum++;
             }
         }
         String r = "";
@@ -36,8 +36,8 @@ public class JudgeUtil {
             w = w.concat(wCount.get(i).toString() + ",");
         }
         String[] s = new String[2];
-        s[0] = "Correct:" + rightNum + "(" + r + ")";
-        s[1] = "Wrong:" + wrongNum + "(" + w + ")";
+        s[0] = "Correct:" + rCount.size() + "(" + r + ")";
+        s[1] = "Wrong:" + wCount.size() + "(" + w + ")";
 
         //输出至文本文件
         FileIOUtil.outPut(s,2);
